@@ -1,5 +1,7 @@
 package com.project.foodcatalogue.dto;
 
+import java.util.Objects;
+
 public class FoodItemDTO {
 
     private int id;
@@ -77,5 +79,17 @@ public class FoodItemDTO {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        FoodItemDTO that = (FoodItemDTO) o;
+        return id == that.id && isVeg == that.isVeg && Objects.equals(itemName, that.itemName) && Objects.equals(itemDescription, that.itemDescription) && Objects.equals(price, that.price) && Objects.equals(restaurantId, that.restaurantId) && Objects.equals(quantity, that.quantity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, itemName, itemDescription, isVeg, price, restaurantId, quantity);
     }
 }
