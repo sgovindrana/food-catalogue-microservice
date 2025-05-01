@@ -5,10 +5,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka-0.eureka-service.default.svc.cluster.local:8761/eureka
-#      default-zone: http://localhost:8761/eureka/
-    # Lease configuration
-    lease-renewal-interval-in-seconds: 30   # Lease renewal interval (default is 30 seconds)
-    lease-expiration-duration-in-seconds: 90 # Lease expiration duration (default is 90 seconds)
-    # Whether to register with Eureka and fetch registry info
-    register-with-eureka: true
-    fetch-registry: true
